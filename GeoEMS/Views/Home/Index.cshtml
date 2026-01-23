@@ -1,0 +1,106 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<style>
+    .tile_count .tile_stats_count:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        height: 65px;
+        border-left: 2px solid #adb2b50d;
+        margin-top: 10px;
+    }
+</style>
+<!-- top tiles -->
+<div class="row tile_count">
+    <div class="col-md-3 col-sm-3 col-xs-6 tile_stats_count bg-blue-sky mx-5">
+        <span class="count_top"><i class="fa fa-user"></i> Total Tickets</span>
+        <div class="count" id="totalTickets">0</div>
+        <span class="count_bottom"><i class="green">4% </i> From last Week</span>
+    </div>
+
+    <div class="col-md-3 col-sm-3 col-xs-6 tile_stats_count bg-purple">
+        <span class="count_top"><i class="fa fa-clock-o"></i> No. Of Vehicle</span>
+        <div class="count" id="totalVehicles">0</div>
+        <span class="count_bottom">
+            <i class="green"><i class="fa fa-sort-asc"></i>3% </i> From last Week
+        </span>
+    </div>
+    <div class="col-md-3 col-sm-3 col-xs-6 tile_stats_count bg-green">
+        <span class="count_top"><i class="fa fa-user"></i> Total Males</span>
+        <div class="count">####</div>
+        <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>34% </i> From last Week</span>
+    </div>
+    <div class="col-md-3 col-sm-3 col-xs-6 tile_stats_count bg-red">
+        <span class="count_top"><i class="fa fa-user"></i> Total Females</span>
+        <div class="count">####</div>
+        <span class="count_bottom"><i class="red"><i class="fa fa-sort-desc"></i>12% </i> From last Week</span>
+    </div>
+</div>
+<!-- /page content -->
+
+<div class="x_panel">
+    <div class="x_title">
+        <h2>API URL: <small>  </small></h2>
+        <ul class="nav navbar-right panel_toolbox">
+            <li>
+                <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                <ul class="dropdown-menu" role="menu">
+                    <li>
+                        <a href="#">Settings 1</a>
+                    </li>
+                    <li>
+                        <a href="#">Settings 2</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a class="close-link"><i class="fa fa-close"></i></a>
+            </li>
+        </ul>
+        <div class="clearfix"></div>
+    </div>
+    <div class="x_content">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+
+            <div class="profile_title">
+                <div class="col-md-12">
+                    <h5 class="alert alert-success alert-dismissible fade in">http://67.211.213.61/GeoEMS/api/GeoEMS/Getdata?ticket=255769</h5>
+                    <h5 class="alert alert-success alert-dismissible fade in">http://67.211.213.61/GeoEMS/api/GeoEMS/GetdataByTicketandDate?ticket=255654&amp;startdate=2024-12-12&amp;enddate=2024-12-13</h5>
+                    <h5 class="alert alert-success alert-dismissible fade in">http://67.211.213.61/GeoEMS/api/GeoEMS/GetdataByDateRange?startdate=2024-12-12&amp;enddate=2024-12-13</h5>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+    const dashboardUrl = '@Url.Action("GetDashboardCounts", "Home")';
+
+    $(document).ready(function () {
+        loadDashboardCounts();
+    });
+
+    function loadDashboardCounts() {
+        $.ajax({
+            url: dashboardUrl,
+            type: 'GET',
+            cache: false,
+            success: function (res) {
+                $('#totalTickets').text(res.totalTickets);
+                $('#totalVehicles').text(res.totalVehicles);
+            },
+            error: function (xhr) {
+                console.error('Dashboard load failed', xhr);
+            }
+        });
+    }
+</script>

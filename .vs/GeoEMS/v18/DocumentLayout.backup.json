@@ -1,0 +1,249 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\EMS\\GeoEMS_22012026\\GeoEMS\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{82248FAD-9C32-48E9-81B9-7DE35B455895}|GeoEMS\\GeoEMS.csproj|d:\\ems\\geoems_22012026\\geoems\\geoems\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{82248FAD-9C32-48E9-81B9-7DE35B455895}|GeoEMS\\GeoEMS.csproj|solutionrelative:geoems\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{82248FAD-9C32-48E9-81B9-7DE35B455895}|GeoEMS\\GeoEMS.csproj|D:\\EMS\\GeoEMS_22012026\\GeoEMS\\geoems\\views\\home\\maintenance.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{82248FAD-9C32-48E9-81B9-7DE35B455895}|GeoEMS\\GeoEMS.csproj|solutionrelative:geoems\\views\\home\\maintenance.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{82248FAD-9C32-48E9-81B9-7DE35B455895}|GeoEMS\\GeoEMS.csproj|D:\\EMS\\GeoEMS_22012026\\GeoEMS\\geoems\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{82248FAD-9C32-48E9-81B9-7DE35B455895}|GeoEMS\\GeoEMS.csproj|solutionrelative:geoems\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{82248FAD-9C32-48E9-81B9-7DE35B455895}|GeoEMS\\GeoEMS.csproj|D:\\EMS\\GeoEMS_22012026\\GeoEMS\\geoems\\models\\emsmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{82248FAD-9C32-48E9-81B9-7DE35B455895}|GeoEMS\\GeoEMS.csproj|solutionrelative:geoems\\models\\emsmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{82248FAD-9C32-48E9-81B9-7DE35B455895}|GeoEMS\\GeoEMS.csproj|D:\\EMS\\GeoEMS_22012026\\GeoEMS\\geoems\\views\\home\\dataentry.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{82248FAD-9C32-48E9-81B9-7DE35B455895}|GeoEMS\\GeoEMS.csproj|solutionrelative:geoems\\views\\home\\dataentry.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{82248FAD-9C32-48E9-81B9-7DE35B455895}|GeoEMS\\GeoEMS.csproj|D:\\EMS\\GeoEMS_22012026\\GeoEMS\\geoems\\views\\account\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{82248FAD-9C32-48E9-81B9-7DE35B455895}|GeoEMS\\GeoEMS.csproj|solutionrelative:geoems\\views\\account\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{82248FAD-9C32-48E9-81B9-7DE35B455895}|GeoEMS\\GeoEMS.csproj|D:\\EMS\\GeoEMS_22012026\\GeoEMS\\geoems\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{82248FAD-9C32-48E9-81B9-7DE35B455895}|GeoEMS\\GeoEMS.csproj|solutionrelative:geoems\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{82248FAD-9C32-48E9-81B9-7DE35B455895}|GeoEMS\\GeoEMS.csproj|D:\\EMS\\GeoEMS_22012026\\GeoEMS\\geoems\\models\\ticket_master.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{82248FAD-9C32-48E9-81B9-7DE35B455895}|GeoEMS\\GeoEMS.csproj|solutionrelative:geoems\\models\\ticket_master.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{82248FAD-9C32-48E9-81B9-7DE35B455895}|GeoEMS\\GeoEMS.csproj|D:\\EMS\\GeoEMS_22012026\\GeoEMS\\geoems\\controllers\\logdatacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{82248FAD-9C32-48E9-81B9-7DE35B455895}|GeoEMS\\GeoEMS.csproj|solutionrelative:geoems\\controllers\\logdatacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{82248FAD-9C32-48E9-81B9-7DE35B455895}|GeoEMS\\GeoEMS.csproj|D:\\EMS\\GeoEMS_22012026\\GeoEMS\\geoems\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{82248FAD-9C32-48E9-81B9-7DE35B455895}|GeoEMS\\GeoEMS.csproj|solutionrelative:geoems\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{82248FAD-9C32-48E9-81B9-7DE35B455895}|GeoEMS\\GeoEMS.csproj|D:\\EMS\\GeoEMS_22012026\\GeoEMS\\geoems\\controllers\\downloadcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{82248FAD-9C32-48E9-81B9-7DE35B455895}|GeoEMS\\GeoEMS.csproj|solutionrelative:geoems\\controllers\\downloadcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{82248FAD-9C32-48E9-81B9-7DE35B455895}|GeoEMS\\GeoEMS.csproj|D:\\EMS\\GeoEMS_22012026\\GeoEMS\\geoems\\models\\gps_data.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{82248FAD-9C32-48E9-81B9-7DE35B455895}|GeoEMS\\GeoEMS.csproj|solutionrelative:geoems\\models\\gps_data.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{82248FAD-9C32-48E9-81B9-7DE35B455895}|GeoEMS\\GeoEMS.csproj|D:\\EMS\\GeoEMS_22012026\\GeoEMS\\geoems\\app_start\\webapiconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{82248FAD-9C32-48E9-81B9-7DE35B455895}|GeoEMS\\GeoEMS.csproj|solutionrelative:geoems\\app_start\\webapiconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{82248FAD-9C32-48E9-81B9-7DE35B455895}|GeoEMS\\GeoEMS.csproj|D:\\EMS\\GeoEMS_22012026\\GeoEMS\\geoems\\lib\\build\\js\\custom.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{82248FAD-9C32-48E9-81B9-7DE35B455895}|GeoEMS\\GeoEMS.csproj|solutionrelative:geoems\\lib\\build\\js\\custom.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 8,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\EMS\\GeoEMS_22012026\\GeoEMS\\GeoEMS\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "GeoEMS\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\EMS\\GeoEMS_22012026\\GeoEMS\\GeoEMS\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "GeoEMS\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAL4AAAAAAAAAAAAvwNcAAAByAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-01-22T11:18:59.148Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "LogDataController.cs",
+              "DocumentMoniker": "D:\\EMS\\GeoEMS_22012026\\GeoEMS\\GeoEMS\\Controllers\\LogDataController.cs",
+              "RelativeDocumentMoniker": "GeoEMS\\Controllers\\LogDataController.cs",
+              "ToolTip": "D:\\EMS\\GeoEMS_22012026\\GeoEMS\\GeoEMS\\Controllers\\LogDataController.cs",
+              "RelativeToolTip": "GeoEMS\\Controllers\\LogDataController.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAAJUAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-22T09:33:41.525Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Gps_data.cs",
+              "DocumentMoniker": "D:\\EMS\\GeoEMS_22012026\\GeoEMS\\GeoEMS\\Models\\Gps_data.cs",
+              "RelativeDocumentMoniker": "GeoEMS\\Models\\Gps_data.cs",
+              "ToolTip": "D:\\EMS\\GeoEMS_22012026\\GeoEMS\\GeoEMS\\Models\\Gps_data.cs",
+              "RelativeToolTip": "GeoEMS\\Models\\Gps_data.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-22T09:33:24.063Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Web.config",
+              "DocumentMoniker": "D:\\EMS\\GeoEMS_22012026\\GeoEMS\\GeoEMS\\Web.config",
+              "RelativeDocumentMoniker": "GeoEMS\\Web.config",
+              "ToolTip": "D:\\EMS\\GeoEMS_22012026\\GeoEMS\\GeoEMS\\Web.config",
+              "RelativeToolTip": "GeoEMS\\Web.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2026-01-22T09:33:24.151Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "WebApiConfig.cs",
+              "DocumentMoniker": "D:\\EMS\\GeoEMS_22012026\\GeoEMS\\GeoEMS\\App_Start\\WebApiConfig.cs",
+              "RelativeDocumentMoniker": "GeoEMS\\App_Start\\WebApiConfig.cs",
+              "ToolTip": "D:\\EMS\\GeoEMS_22012026\\GeoEMS\\GeoEMS\\App_Start\\WebApiConfig.cs",
+              "RelativeToolTip": "GeoEMS\\App_Start\\WebApiConfig.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABAAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-22T09:33:24.151Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "DownloadController.cs",
+              "DocumentMoniker": "D:\\EMS\\GeoEMS_22012026\\GeoEMS\\GeoEMS\\Controllers\\DownloadController.cs",
+              "RelativeDocumentMoniker": "GeoEMS\\Controllers\\DownloadController.cs",
+              "ToolTip": "D:\\EMS\\GeoEMS_22012026\\GeoEMS\\GeoEMS\\Controllers\\DownloadController.cs",
+              "RelativeToolTip": "GeoEMS\\Controllers\\DownloadController.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAIwBkAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-22T09:33:24.151Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\EMS\\GeoEMS_22012026\\GeoEMS\\GeoEMS\\Views\\Account\\Index.cshtml",
+              "RelativeDocumentMoniker": "GeoEMS\\Views\\Account\\Index.cshtml",
+              "ToolTip": "D:\\EMS\\GeoEMS_22012026\\GeoEMS\\GeoEMS\\Views\\Account\\Index.cshtml",
+              "RelativeToolTip": "GeoEMS\\Views\\Account\\Index.cshtml",
+              "ViewState": "AgIAAFcAAAAAAAAAAAAAAB4AAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-01-22T09:33:24.155Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ticket_master.cs",
+              "DocumentMoniker": "D:\\EMS\\GeoEMS_22012026\\GeoEMS\\GeoEMS\\Models\\ticket_master.cs",
+              "RelativeDocumentMoniker": "GeoEMS\\Models\\ticket_master.cs",
+              "ToolTip": "D:\\EMS\\GeoEMS_22012026\\GeoEMS\\GeoEMS\\Models\\ticket_master.cs",
+              "RelativeToolTip": "GeoEMS\\Models\\ticket_master.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-22T09:33:24.156Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\EMS\\GeoEMS_22012026\\GeoEMS\\GeoEMS\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "GeoEMS\\Controllers\\HomeController.cs",
+              "ToolTip": "D:\\EMS\\GeoEMS_22012026\\GeoEMS\\GeoEMS\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "GeoEMS\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAGwEAAAAAAAAAAAqwJ0EAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-22T09:33:24.156Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "DataEntry.cshtml",
+              "DocumentMoniker": "D:\\EMS\\GeoEMS_22012026\\GeoEMS\\GeoEMS\\Views\\Home\\DataEntry.cshtml",
+              "RelativeDocumentMoniker": "GeoEMS\\Views\\Home\\DataEntry.cshtml",
+              "ToolTip": "D:\\EMS\\GeoEMS_22012026\\GeoEMS\\GeoEMS\\Views\\Home\\DataEntry.cshtml",
+              "RelativeToolTip": "GeoEMS\\Views\\Home\\DataEntry.cshtml",
+              "ViewState": "AgIAAO8BAAAAAAAAAAAwwAoCAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-01-22T09:33:24.156Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "EMSModel.cs",
+              "DocumentMoniker": "D:\\EMS\\GeoEMS_22012026\\GeoEMS\\GeoEMS\\Models\\EMSModel.cs",
+              "RelativeDocumentMoniker": "GeoEMS\\Models\\EMSModel.cs",
+              "ToolTip": "D:\\EMS\\GeoEMS_22012026\\GeoEMS\\GeoEMS\\Models\\EMSModel.cs",
+              "RelativeToolTip": "GeoEMS\\Models\\EMSModel.cs",
+              "ViewState": "AgIAAKoAAAAAAAAAAAAuwMIAAABfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-22T09:33:24.566Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Maintenance.cshtml",
+              "DocumentMoniker": "D:\\EMS\\GeoEMS_22012026\\GeoEMS\\GeoEMS\\Views\\Home\\Maintenance.cshtml",
+              "RelativeDocumentMoniker": "GeoEMS\\Views\\Home\\Maintenance.cshtml",
+              "ToolTip": "D:\\EMS\\GeoEMS_22012026\\GeoEMS\\GeoEMS\\Views\\Home\\Maintenance.cshtml",
+              "RelativeToolTip": "GeoEMS\\Views\\Home\\Maintenance.cshtml",
+              "ViewState": "AgIAADoBAAAAAAAAAAAwwDsBAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-01-22T09:33:24.874Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\EMS\\GeoEMS_22012026\\GeoEMS\\GeoEMS\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "GeoEMS\\Views\\Home\\Index.cshtml",
+              "ToolTip": "D:\\EMS\\GeoEMS_22012026\\GeoEMS\\GeoEMS\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "GeoEMS\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAFYAAAAAAAAAAAAwwGoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-01-22T09:33:24.876Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "custom.js",
+              "DocumentMoniker": "D:\\EMS\\GeoEMS_22012026\\GeoEMS\\GeoEMS\\Lib\\build\\js\\custom.js",
+              "RelativeDocumentMoniker": "GeoEMS\\Lib\\build\\js\\custom.js",
+              "ToolTip": "D:\\EMS\\GeoEMS_22012026\\GeoEMS\\GeoEMS\\Lib\\build\\js\\custom.js",
+              "RelativeToolTip": "GeoEMS\\Lib\\build\\js\\custom.js",
+              "ViewState": "AgIAAGAAAAAAAAAAAAAowDgAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2026-01-22T09:33:24.876Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,221 @@
+﻿@model GeoEMS.Models.UserLogin
+@{
+    Layout = null;
+}
+
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Yo4gis</title>
+
+    <!-- Bootstrap -->
+    <link href="~/Lib/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="~/Lib/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="~/Lib/vendors/nprogress/nprogress.css" rel="stylesheet">
+    <!-- Animate.css -->
+    <link href="~/Lib/vendors/animate.css/animate.min.css" rel="stylesheet" />
+
+    <!-- Custom Theme Style -->
+    <link href="~/Lib/build/css/custom.min.css" rel="stylesheet">
+
+    <style>
+        #bg1 {
+
+            /* border: 2px solid black;*/
+            /*padding: 25px;*/
+            /*   background: url(/Lib/images/pngegg.png);*/
+            /* background-repeat: no-repeat;
+            background-size: contain;*/
+            overflow: hidden
+        }
+
+        .bg-image {
+            /* The image used */
+            background-image: url(/Lib/images/map-pin.jpg);
+            /* Add the blur effect */
+            filter: blur(8px);
+            -webkit-filter: blur(8px);
+            /* Full height */
+            height: 100%;
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .bg-text {
+            /* background-color: rgb(0, 0, 0); */
+            /* background-color: rgba(0, 0, 0, 0.4); */
+            color: white;
+            font-weight: bold;
+            /* border: 3px solid #f1f1f1; */
+            position: absolute;
+            top: 20%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+            width: 80%;
+            /* padding: 20px; */
+            text-align: center;
+        }
+
+        .login_content {
+            background-color: #172D44;
+            /* padding: 10px; */
+            margin: 0 auto;
+            padding: 25px 5px 0px;
+            position: relative;
+            text-align: center;
+            text-shadow: 0 0px 0 rgba(114, 118, 139, .08);
+            min-width: 280px;
+            color: #fff;
+            border-radius: 10px;
+            /* border: 5px solid #337ab7;*/
+            box-shadow: 10px blue;
+        }
+
+        .separator {
+            border-top: 1px solid #fff;
+            margin-top: 10px;
+            padding-top: 10px;
+        }
+
+        a {
+            color: #ffffff;
+        }
+    </style>
+</head>
+
+<body class="login" id="bg1">
+
+    <div class="bg-image"></div>
+    <div class="bg-text">
+        <a class="hiddenanchor" id="signup"></a>
+        <a class="hiddenanchor" id="signin"></a>
+
+        <div class="login_wrapper">
+            <div class="animate form login_form">
+                <section class="login_content">
+                    <form>
+                        @*<h1>Login Form</h1>
+                            <div>
+                                <input type="text" class="form-control" placeholder="Username" required="" />
+                            </div>
+                            <div>
+                                <input type="password" class="form-control" placeholder="Password" required="" />
+                            </div>
+                            <div>
+                                <a class="btn btn-default submit" href="index.html">Log in</a>
+                                <a class="reset_pass" href="#">Lost your password?</a>
+                            </div>
+
+                            <div class="clearfix"></div>
+
+                            <div class="separator">
+                                <p class="change_link">
+                                    New to site?
+                                    <a href="#signup" class="to_register"> Create Account </a>
+                                </p>
+
+                                <div class="clearfix"></div>
+                                <br />
+
+
+                            </div>*@
+
+                    </form>
+
+                    @using (Html.BeginForm("Index", "Account", FormMethod.Post, new { @class = "" }))
+                    {
+                        <h1>Login Form</h1>
+                        @Html.AntiForgeryToken()
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        @Html.ValidationMessage("error", new { @class = "text-danger" })
+
+                        <div>
+                            @*<input type="text" class="form-control" placeholder="Username" required="" />*@
+                            @Html.TextBoxFor(e => e.UserName, new { @class = "form-control", placeholder = "User Name" })
+                            @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+                        </div>
+                        <div>
+                            @*<input type="password" class="form-control" placeholder="Password" required="" />*@
+                            @Html.TextBoxFor(e => e.Password, new { @class = "form-control", placeholder = "Password", id = "password", type = "password" })
+                            @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                        </div>
+                        <div>
+                            <button type="submit" class="btn btn-info btn-block">Login</button>
+                            @*<a class="btn btn-default submit" href="index.html">Log in</a>*@
+                            @*<a class="reset_pass" href="#">Lost your password?</a>*@
+                        </div>
+
+                        @*<button type="submit" class="btn btn-info btn-block"><a class="text-white">Login</a></button>*@
+                        <div class="clearfix"></div>
+
+                        <div class="separator">
+                            <p class="change_link">
+                                New to site?
+                                <a href="#signup" class="to_register"> Create Account </a>
+                            </p>
+
+                            <div class="clearfix"></div>
+                            <br />
+
+
+                        </div>
+                    }
+                </section>
+            </div>
+
+            <div id="register" class="animate form registration_form">
+                <section class="login_content">
+                    <form>
+                        <h1>Create Account</h1>
+                        <div>
+                            <input type="text" class="form-control" placeholder="Username" required="" />
+                        </div>
+                        <div>
+                            <input type="email" class="form-control" placeholder="Email" required="" />
+                        </div>
+                        <div>
+                            <input type="password" class="form-control" placeholder="Password" required="" />
+                        </div>
+                        <div>
+                            <a class="btn btn-default submit" href="index.html">Submit</a>
+                        </div>
+
+                        <div class="clearfix"></div>
+
+                        <div class="separator">
+                            <p class="change_link">
+                                Already a member ?
+                                <a href="#signin" class="to_register"> Log in </a>
+                            </p>
+
+                            <div class="clearfix"></div>
+                            <br />
+
+
+                        </div>
+                    </form>
+                </section>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- jQuery -->
+    <!--<script src="~/Lib/vendors/jquery/dist/jquery.min.js"></script>-->
+    <!-- Bootstrap -->
+    <!--<script src="~/Lib/vendors/bootstrap/dist/js/bootstrap.min.js"></script>-->
+    <!-- FastClick -->
+    <!--<script src="~/Lib/vendors/fastclick/lib/fastclick.js"></script>-->
+
+</body>
+</html>

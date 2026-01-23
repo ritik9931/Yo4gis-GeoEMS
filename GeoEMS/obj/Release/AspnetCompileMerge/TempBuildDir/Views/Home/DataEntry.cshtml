@@ -1,0 +1,462 @@
+﻿
+@{
+    ViewBag.Title = "DataEntry";
+
+}
+
+@if (TempData["Error"] != null)
+{
+
+
+    <script type="text/javascript">
+        var msg = '@TempData["Error"]';
+         new PNotify({
+         title: 'Excel Upload',
+         text: '@TempData["Error"]',
+         type: 'info',
+         styling: 'bootstrap3'
+     });
+    </script>
+
+}
+
+@if (TempData["Success"] != null)
+{
+    <script type="text/javascript">
+        var msg = '@TempData["Success"]';
+        if (msg.length) {
+            new PNotify({
+                title: 'Excel Upload',
+                text: msg,
+                type: 'info',
+                styling: 'bootstrap3'
+            });
+            alert(msg);
+    }
+    </script>
+
+}
+<style>
+    /* .file-upload {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }*/
+
+    /*.file-name {
+        width: 300px;
+        padding: 5px;
+    }*/
+</style>
+
+<div class="">
+    <div class="page-title">
+        <div class="title_left">
+            <h3>Load Missing Data</h3>
+        </div>
+
+        <div class="title_right">
+            <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search for...">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="button">Go!</button>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="clearfix"></div>
+
+    <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="x_panel">
+                <div class="x_title">
+                    <h2>Upload Excel File</h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                        <li>
+                            <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li>
+                                    <a href="#">Settings 1</a>
+                                </li>
+                                <li>
+                                    <a href="#">Settings 2</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="close-link"><i class="fa fa-close"></i></a>
+                        </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="col-sm-12">
+
+                    <div class="x_content">
+                        <input type="file" class="btn btn-sm btn-outline-success" id="upload" style="display:none" />
+                        <div class="file-upload">
+
+                            @*<button id="uploadButton" class="btn btn-primary">Select File</button>*@
+
+                            @*<button id="ViewInTable" class="btn btn-info">Upload to view in table</button>*@
+                            @using (Html.BeginForm("ImportExcelFileAsync", "Home", null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+                            {
+                                <div class="col-sm-12">
+                                    <div class="col-sm-4"> <input type="file" id="fileInput" name="excelFile"></div>
+                                    <div class="col-sm-8">
+                                        <div class="col-sm-3"><button class="btn btn-default" id="spinbtn" style="display:none;"><i class="fa fa-spinner fa-spin"></i></button></div>
+                                        <div class="col-sm-9"><input type="button" id="clrbtn" class="btn btn-danger" value="Clear" /><input type="button" id="validatebtn" class="btn btn-info" value="Validate" /><input type="submit" id="Impbtn" class="btn btn-success" onclick="return chkValid()" value="Upload to server" /><a href="@Url.Action("DownloadExcel", "Home")" class="btn btn-primary">Download Template Excel</a></div>
+                                        
+
+
+                                    </div>
+
+                                </div>
+
+                                @*<input type="text" id="fileName" class="file-name form-control" placeholder="No file selected" readonly>*@
+
+                            }
+                        </div>
+
+
+
+                        <br />
+                    </div>
+                </div>
+
+
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <table id="excelDataTable" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
+                        <thead>
+                            <tr><th>Ticket No. </th><th>Vehicle No.</th><th>Latitude</th><th>Longitude</th><th>Geofence Date and Time</th><th>Is Valid</th></tr>
+                        </thead>
+                        <tbody id="excelDataTabledata"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <div class="row">
+
+
+    </div>
+</div>
+<script>
+    const fileInput = document.getElementById('fileInput');
+    const uploadButton = document.getElementById('uploadButton');
+    const fileNameInput = document.getElementById('fileName');
+
+    //const validatebtnclick = document.getElementById('validatebtn');
+
+    var errorDateCount = 0;
+
+
+    //uploadButton.addEventListener('click', (e) => {
+    //    fileInput.click();
+    //   // e.preventDefault();
+
+    //});
+
+    var ExcelData = null;
+
+    fileInput.addEventListener('change', () => {
+        $("#spinbtn").css("display","block");
+        const ext = getFileExtension(fileInput.files[0]?.name);
+        if (ext == "xlsx" || ext == "XLSX") {
+            //const fileName = fileInput.files[0]?.name || "No file selected";
+            //fileNameInput.value = fileName;
+
+
+            // const file = e.target.files[0];
+            const file = fileInput.files[0];
+            const reader = new FileReader();
+
+            reader.onload = function (event) {
+                const data = new Uint8Array(event.target.result);
+                const workbook = XLSX.read(data, { type: 'array' });
+
+                // Get first worksheet
+                const sheetName = workbook.SheetNames[0];
+                const worksheet = workbook.Sheets[sheetName];
+
+                // Convert sheet to JSON
+                const jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, raw: false  });
+                ExcelData = jsonData;
+                // Display the data in a table
+                displayData(jsonData);
+                $('#excelDataTable').DataTable();
+                $("#spinbtn").css("display", "none");
+            };
+
+            reader.readAsArrayBuffer(file);
+
+        } else {
+            new PNotify({
+                title: 'Excel Upload',
+                text: 'Please select valid file',
+                type: 'error',
+                styling: 'bootstrap3'
+            });
+            alert("Please select valid file");
+            $("#spinbtn").css("display", "none");
+        }
+
+    });
+
+    function DownloadTemplate() {
+        //alert('Hello');
+         $.ajax({
+            url: "@Url.Action("DownloadExcel", "Home")",
+            type: 'GET',
+            dataType: 'json', // added data type
+            success: function (res) {
+               
+
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.log(jqXHR);
+                $("#spinbtn").css("display", "none");
+            }
+
+         });
+
+    }
+
+    function getFileExtension(filename) {
+        const match = filename.match(/\.([0-9a-z]+)(?:[\?#]|$)/i);
+        return match ? match[1] : '';
+    }
+    // Listen for file input changes
+    //document.getElementById('ViewInTable').addEventListener('click', handleFile, false);
+
+    function handleFile(e) {
+        //// const file = e.target.files[0];
+        //const file = fileInput.files[0];
+        //const reader = new FileReader();
+
+        //reader.onload = function (event) {
+        //    const data = new Uint8Array(event.target.result);
+        //    const workbook = XLSX.read(data, { type: 'array' });
+
+        //    // Get first worksheet
+        //    const sheetName = workbook.SheetNames[0];
+        //    const worksheet = workbook.Sheets[sheetName];
+
+        //    // Convert sheet to JSON
+        //    const jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
+
+        //    // Display the data in a table
+        //    displayData(jsonData);
+        //    $('#excelDataTable').DataTable();
+        //};
+
+        //reader.readAsArrayBuffer(file);
+    }
+
+    function displayData(data) {
+        const table = document.getElementById('excelDataTabledata');
+        table.innerHTML = ''; // Clear any existing data
+
+        errorDateCount = 0;
+        var cntRow = 0;
+        // Loop through rows and cells
+        data.forEach((row) => {
+            cntRow++;
+            let rowElement = document.createElement('tr');
+            const dateString = row[4];
+            const format = "DD-MM-YYYY HH:mm:ss";
+            const format1 = "DD/MM/YYYY HH:mm:ss";
+
+            // Validate the date format
+            const isValid = moment(dateString, format, true).isValid();
+            const isValid1 = moment(dateString, format1, true).isValid();
+            if (!(isValid || isValid1) && dateString != 'Geofence Date and Time') {
+                rowElement.className = "danger";
+                row.push('false');
+                errorDateCount = errorDateCount + 1;
+            } else {
+                row.push('true')
+            }
+            //alert(); //true
+            row.forEach((cell) => {
+                let cellElement = document.createElement('td');
+                cellElement.textContent = cell;
+                rowElement.appendChild(cellElement);
+            });
+            if (row[0] != 'TicketNo') {
+
+                table.appendChild(rowElement);
+            }
+        });
+
+        if (errorDateCount > 0) {
+            new PNotify({
+                title: 'Excel Upload',
+                text: errorDateCount + ' :- Number of record are not in correct format. Please check date format',
+                type: 'error',
+                styling: 'bootstrap3'
+            });
+        }
+    }
+
+
+
+    function checkfile(id) {
+        var status = false;
+        const ext = getFileExtension(fileInput.files[0]?.name);
+        if (ext == "xlsx" || ext == "XLSX") {
+            const fileName = fileInput.files[0]?.name || "No file selected";
+            fileNameInput.value = fileName;
+            status = true;
+        } else {
+            status = false;
+            alert("Please select valid file");
+        }
+
+        return status;
+    }
+
+
+    $("#validatebtn").click(function () {
+        $("#spinbtn").css("display", "block");
+        $.ajax({
+            url: "@Url.Action("GetAllTicketData", "Home")",
+            type: 'GET',
+            dataType: 'json', // added data type
+            success: function (res) {
+                //console.log(res);
+                if (res.status == "success") {
+                    var ticketList = res.Data;
+                    displayAfteValidate(ExcelData, ticketList);
+                    $("#spinbtn").css("display", "none");
+                }
+
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.log(jqXHR);
+                $("#spinbtn").css("display", "none");
+            }
+
+        });
+
+    });
+
+
+    function displayAfteValidate(exceldata, tabledata) {
+        if (exceldata == null) {
+            return new PNotify({
+                title: 'Excel Validate',
+                text: 'Please select excel file.',
+                type: 'error',
+                styling: 'bootstrap3'
+            });
+        }
+
+        if ($.fn.DataTable.isDataTable('#excelDataTable')) {
+            $('#excelDataTable').DataTable().destroy();
+        }
+
+        $('#excelDataTable tbody').empty();
+
+
+        const table = document.getElementById('excelDataTabledata');
+        table.innerHTML = ''; // Clear any existing data
+
+         errorDateCount = 0;
+        // Loop through rows and cells
+        exceldata.forEach((row) => {
+            let rowElement = document.createElement('tr');
+            const ticketString = row[0];
+
+            if (tabledata.length > 0) {
+                const isAvl = tabledata.find(f => f.ticket_no == ticketString);
+
+                if (isAvl != undefined) {
+                    rowElement.className = "danger";
+                    errorDateCount = errorDateCount + 1;
+                }
+            }
+
+            //alert(); //true
+            row.forEach((cell) => {
+                let cellElement = document.createElement('td');
+                cellElement.textContent = cell;
+                rowElement.appendChild(cellElement);
+            });
+
+            //table.appendChild(rowElement);
+            if (row[0] != 'TicketNo') {
+
+                table.appendChild(rowElement);
+            }
+        });
+
+
+        // ... skipped ...
+
+        $('#excelDataTable').dataTable();
+        //$('#excelDataTable').DataTable();
+        if (errorDateCount > 0) {
+            new PNotify({
+                title: 'Excel Validate',
+                text: errorDateCount + ' :- Number of record are duplicate',
+                type: 'error',
+                styling: 'bootstrap3'
+            });
+        } else {
+            new PNotify({
+                title: 'Excel Validate',
+                text: ' Validate Successfully',
+                type: 'success',
+                styling: 'bootstrap3'
+            });
+        }
+    }
+
+    function chkValid() {
+        if (errorDateCount != 0) {
+            new PNotify({
+                title: 'Excel Upload',
+                text: 'Please validate records in table',
+                type: 'error',
+                styling: 'bootstrap3'
+            });
+            return false;
+        } else if (fileInput.value == '') {
+            new PNotify({
+                title: 'Excel Upload',
+                text: 'Please select file',
+                type: 'error',
+                styling: 'bootstrap3'
+            });
+            return false;
+        }
+
+        else {
+            return true;
+        }
+    }
+
+    $("#clrbtn").click(function () {
+        $("#spinbtn").css("display", "block");
+        fileInput.value = '';
+        if ($.fn.DataTable.isDataTable('#excelDataTable')) {
+            $('#excelDataTable').DataTable().destroy();
+        }
+        const table = document.getElementById('excelDataTabledata');
+        table.innerHTML = ''; // Clear any existing data
+        $("#spinbtn").css("display", "none");
+    });
+
+
+</script>
