@@ -1129,7 +1129,7 @@ namespace GeoEMS.Controllers
         [HttpGet]
         public JsonResult GetDashboardCounts()
         {
-            string sql = @"SELECT COUNT(id) AS ""TotalTickets"", COUNT(DISTINCT vehicle_no) AS ""TotalVehicles"" FROM y_mayur.ticket_master;";
+            string sql = @"SELECT COUNT(ticket_no) AS ""TotalTickets"", COUNT(DISTINCT vehicle_no) AS ""TotalVehicles"" FROM y_mayur.ticket_master;";
 
             var result = _db.QueryFirstOrDefault(sql);
 

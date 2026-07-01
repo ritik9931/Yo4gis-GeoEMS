@@ -112,67 +112,8 @@
 
     </div>
 </div>
-<script>
-    //GetGpsDataList();
-    @*function GetGpsDataList() {
-    let url = "@Url.Action("GetAllTicketData", "Home")";
-    $.ajax({
-        url: url,
-        crossDomain: true,
-
-        success: function (res) {
-
-           // var Result = JSON.parse(data.Data)
-
-
-
-            if (res.Data.length == 0) {
-                //toastr.error('', "Record is empty");
-                if ($.fn.DataTable.isDataTable("#excelDataTabledata")) {
-                    $('#excelDataTabledata').DataTable().clear().destroy();
-                }
-            }
-
-            if ($.fn.DataTable.isDataTable('#excelDataTabledata')) {
-                $('#excelDataTabledata').DataTable().destroy();
-            }
-
-            $('#excelDataTable tbody').empty();
-
-
-
-            var tabledata = $('#excelDataTabledata').DataTable({
-                data: res.Data,
-                "columns": [
-                    { "data": "ticket_no" },
-                    { "data": "vehicle_no" },
-                    //{ "data": "created_at" },
-                    {
-                        "data": function (data, type, row, meta) {
-
-                            const date1 = moment(data.created_at).format("DD-MM-YYYY HH:mm:ss");
-                            return date1;
-
-                        }
-                    },
-                    {
-                        "data": function (data, type, row, meta) {
-
-                            data1 = "<button id='" + data.ticket_no + "' class='btn btn-error btn-xs btn-rounded' onclick=DeleteTrip(this.id) ><span class='glyphicon glyphicon-trash'></span></button>";
-                            return data1;
-
-                        }
-                    }
-                ]
-
-
-            });
-        }
-
-    });
-
-
-    }*@
+@*<script>
+    
 
     function DeleteTrip(id) {
         //alert('Hello');
@@ -213,7 +154,7 @@
 
 
     }
-</script>
+</script>*@
 <script>
 
    var table;
